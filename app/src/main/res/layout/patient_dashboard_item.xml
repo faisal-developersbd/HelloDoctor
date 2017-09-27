@@ -6,12 +6,14 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="150dp"
+
+        android:background="@drawable/listbg"
         android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="250dp"
+            android:layout_height="150dp"
 
             android:orientation="horizontal">
 
@@ -22,18 +24,20 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:id="@+id/imageView2"
+                    android:id="@+id/doctor_img"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
                     android:layout_weight="1"
                     app:srcCompat="@drawable/doctors_appoinment" />
 
                 <TextView
-                    android:id="@+id/textView13"
+                    android:id="@+id/doctors_name"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:textColor="@android:color/black"
                     android:textSize="16dp"
+                    android:textAlignment="center"
                     android:layout_weight="2"
                     android:text="TextView" />
             </LinearLayout>
@@ -52,7 +56,7 @@
 
 
                     <TextView
-                        android:id="@+id/textView19"
+                        android:id="@+id/list_header"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -61,7 +65,7 @@
                         android:text="Appoinment 1" />
 
                     <CheckBox
-                        android:id="@+id/checkBox"
+                        android:id="@+id/check_notification"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
 
@@ -75,7 +79,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/textView15"
+                        android:id="@+id/doctors_sp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="specialist" />
@@ -83,7 +87,7 @@
 
 
                     <TextView
-                        android:id="@+id/textView16"
+                        android:id="@+id/doctors_location"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="location" />
@@ -91,21 +95,21 @@
 
 
                     <TextView
-                        android:id="@+id/textView18"
+                        android:id="@+id/doctors_time"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
 
                         android:text="time" />
 
                     <TextView
-                        android:id="@+id/textView17"
+                        android:id="@+id/doctors_date"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
 
                         android:text="date" />
 
                     <TextView
-                        android:id="@+id/textView20"
+                        android:id="@+id/doctors_distance"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="distance" />
