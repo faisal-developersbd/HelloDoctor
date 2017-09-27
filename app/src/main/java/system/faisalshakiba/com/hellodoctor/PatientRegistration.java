@@ -24,6 +24,7 @@ public class PatientRegistration extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+        fab.setVisibility(View.GONE);
     }
 
 }

@@ -18,8 +18,9 @@ import android.widget.Toast;
 
 public class LandingActivity extends AppCompatActivity {
     TextView notRegistration;
-    RadioButton parent,doctor;
+   // RadioButton parent,doctor;
     EditText username,password;
+    String user="";
     Button sign_in;
     final int REQUEST_CODE_ASK_PERMISSIONS = 123;
     @Override
@@ -28,11 +29,12 @@ public class LandingActivity extends AppCompatActivity {
         setContentView(R.layout.landing_page);
         ActivityCompat.requestPermissions(LandingActivity.this, new String[]{"android.permission.INTERNET"}, REQUEST_CODE_ASK_PERMISSIONS);
         notRegistration=(TextView) findViewById(R.id.txt_not_registration);
-        parent=(RadioButton) findViewById(R.id.radio_patient);
-        doctor=(RadioButton) findViewById(R.id.radio_doctor);
+        //parent=(RadioButton) findViewById(R.id.radio_patient);
+       // doctor=(RadioButton) findViewById(R.id.radio_doctor);
         username=(EditText) findViewById(R.id.txt_username);
         password=(EditText) findViewById(R.id.txt_password);
         sign_in=(Button) findViewById(R.id.btn_signin);
+         user=getIntent().getStringExtra("user");
         sign_in.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -40,19 +42,19 @@ public class LandingActivity extends AppCompatActivity {
                 {
                     String userId=username.getText().toString();
                     String userPassword=password.getText().toString();
-                    if(parent.isChecked())
-                    {
+//                    if(parent.isChecked())
+//                    {
                         Intent intent=new Intent(LandingActivity.this,PatientNavActivity.class);
                         startActivity(intent);
                         finish();
-                    }
-                    else if(doctor.isChecked())
-                    {
-                        Intent intent=new Intent(LandingActivity.this,DoctorActivity.class);
-                        startActivity(intent);
-                        finish();
-                    }
-                    else Toast.makeText(getBaseContext(),"ERROR: SELECT PATIENT/DOCTOR FIRST",Toast.LENGTH_LONG).show();
+                  //  }
+//                    else if(doctor.isChecked())
+//                    {
+//                        Intent intent2=new Intent(LandingActivity.this,DoctorRegistration.class);
+//                        startActivity(intent2);
+//                        finish();
+                   // }
+                  //  else Toast.makeText(getBaseContext(),"ERROR: SELECT PATIENT/DOCTOR FIRST",Toast.LENGTH_LONG).show();
                 }
                 else Toast.makeText(getBaseContext(),"ERROR: SELECT PATIENT/DOCTOR FIRST",Toast.LENGTH_LONG).show();
 
@@ -61,7 +63,13 @@ public class LandingActivity extends AppCompatActivity {
         notRegistration.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(LandingActivity.this,SecondActivity.class);
+               Intent intent;
+                if(user.equals("doctor"))
+                {
+                    intent=new Intent(LandingActivity.this,DoctorRegistration.class);
+                }
+                else intent=new Intent(LandingActivity.this,PatientRegistration.class);
+
                 startActivity(intent);
                 finish();
             }

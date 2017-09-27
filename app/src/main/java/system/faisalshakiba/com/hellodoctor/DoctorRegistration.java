@@ -26,7 +26,7 @@ public class DoctorRegistration extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(DoctorRegistration.this,SecondActivity.class);
+                Intent intent=new Intent(DoctorRegistration.this,LandingActivity.class);
                 startActivity(intent);
                 finish();
             }

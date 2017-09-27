@@ -29,36 +29,36 @@
                 android:textColor="@android:color/black"
                 android:text="SING IN" />
 
-            <TextView
-                android:id="@+id/textView9"
-                android:layout_marginTop="10dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textSize="15dp"
-                android:textColor="@android:color/black"
-                android:text="I AM A" />
+            <!--<TextView-->
+                <!--android:id="@+id/textView9"-->
+                <!--android:layout_marginTop="10dp"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_weight="1"-->
+                <!--android:textSize="15dp"-->
+                <!--android:textColor="@android:color/black"-->
+                <!--android:text="I AM A" />-->
 
 
-            <RadioGroup
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1">
+            <!--<RadioGroup-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_weight="1">-->
 
-                <RadioButton
-                    android:id="@+id/radio_patient"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="PATIENT" />
+                <!--<RadioButton-->
+                    <!--android:id="@+id/radio_patient"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:text="PATIENT" />-->
 
-                <RadioButton
-                    android:id="@+id/radio_doctor"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="DOCTOR" />
-            </RadioGroup>
+                <!--<RadioButton-->
+                    <!--android:id="@+id/radio_doctor"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:text="DOCTOR" />-->
+            <!--</RadioGroup>-->
 
             <EditText
                 android:id="@+id/txt_username"

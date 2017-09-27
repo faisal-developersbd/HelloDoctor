@@ -22,7 +22,7 @@ public class SecondActivity extends AppCompatActivity {
         patient=(RadioButton) findViewById(R.id.s_patient);
         doctor=(RadioButton) findViewById(R.id.s_doctor);
         next=(Button) findViewById(R.id.s_btn_next2);
-        back=(Button) findViewById(R.id.s_btn_back);
+       // back=(Button) findViewById(R.id.s_btn_back);
         try
 
         {
@@ -36,13 +36,15 @@ public class SecondActivity extends AppCompatActivity {
                 if(patient.isChecked())
                 {
 
-                    Intent intent=new Intent(SecondActivity.this,DoctorRegistration.class);
+                    Intent intent=new Intent(SecondActivity.this,LandingActivity.class);
+                    intent.putExtra("user","patient");
                     startActivity(intent);
                     finish();
                 }
                 else if(doctor.isChecked())
                 {
-                    Intent intent2=new Intent(SecondActivity.this,DoctorRegistration.class);
+                    Intent intent2=new Intent(SecondActivity.this,LandingActivity.class);
+                    intent2.putExtra("user","patient");
                     startActivity(intent2);
                     finish();
                 }
@@ -53,13 +55,13 @@ public class SecondActivity extends AppCompatActivity {
         {
 
         }
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent=new Intent(SecondActivity.this,LandingActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        });
+//        back.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent=new Intent(SecondActivity.this,LandingActivity.class);
+//                startActivity(intent);
+//                finish();
+//            }
+//        });
     }
 }
