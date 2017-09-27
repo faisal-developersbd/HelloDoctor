@@ -3,4 +3,10 @@
     <string name="not_registration"><u>NOT REGISTERED ?</u></string>
     <string name="title_activity_patient_registration">PatientRegistration</string>
     <string name="title_activity_create_time">CreateTimeActivity</string>
+    <string name="title_activity_patient_nav">PatientNavActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
 </resources>

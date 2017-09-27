@@ -7,35 +7,8 @@
         jumboMode="true"
         optimize="true"
         revision="26.0.1"
-        sha1="4dfcf572ec05a23a999b1b604d11cb5a8ea97a84">
+        sha1="71359712db2885a3a94ad877d2af15687246d83c">
         <dex dex="D:\Github\HelloDoctor\HelloDoctor\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_32c147722406a6d55b2fdb018b7f2a0eb94dd4bb\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\TC\.android\build-cache\45b1889c0958380efccba2947c6e9b9299d4e77f\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.1"
-        sha1="c4f45092eee6cdf1a5dbd597b2b6819be652ce2e">
-        <dex dex="D:\Github\HelloDoctor\HelloDoctor\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_33f8cef72f226208180fbf19b29930a3774abf64\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\TC\.android\build-cache\d34e71b3dbee736631ceb31d8967de93dac2be16\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.1"
-        sha1="cddcd0fb93bc70e27325f2f715b2710332004ebb">
-        <dex dex="D:\Github\HelloDoctor\HelloDoctor\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_dfb890cd19267476f6699b792bd75a9d5baf2459\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\TC\.android\build-cache\ac8e4363f84c62a575d1016bfc16ceade953bf3f\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.1"
-        sha1="6a022bf00ccd0948a8180c505e8e458bbddd43a6">
-        <dex dex="D:\Github\HelloDoctor\HelloDoctor\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_434014e4a74356952efcb846be4323cbc18e3df7\classes.dex" />
     </item>
     <item
         is-multidex="true"

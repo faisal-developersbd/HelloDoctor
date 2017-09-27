@@ -39,21 +39,26 @@
                 android:textColor="@android:color/black"
                 android:text="I AM A" />
 
-            <RadioButton
-                android:id="@+id/radio_patient"
+
+            <RadioGroup
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="PATIENT" />
+                android:layout_weight="1">
 
+                <RadioButton
+                    android:id="@+id/radio_patient"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="PATIENT" />
 
-
-            <RadioButton
-                android:id="@+id/radio_doctor"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="DOCTOR" />
+                <RadioButton
+                    android:id="@+id/radio_doctor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="DOCTOR" />
+            </RadioGroup>
 
             <EditText
                 android:id="@+id/txt_username"
@@ -81,7 +86,7 @@
                 android:text="SIGN IN" />
 
             <TextView
-                android:id="@+id/textView8"
+                android:id="@+id/txt_not_registration"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"

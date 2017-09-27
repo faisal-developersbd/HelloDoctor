@@ -12,5 +12,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.doctor_registration);
 //        Intent intent =new Intent(MainActivity.this,DoctorActivity.class);
 //        startActivity(intent);
+//        Intent intent =new Intent(MainActivity.this,SplashScreen.class);
+//        startActivity(intent);
+//        this.finish();
     }
 }
