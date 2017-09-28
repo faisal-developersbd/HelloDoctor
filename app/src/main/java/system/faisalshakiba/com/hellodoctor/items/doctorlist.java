@@ -7,6 +7,7 @@ import android.graphics.Bitmap;
  */
 
 public class doctorlist {
+    private String id;
        private Bitmap propic;
     private String doctorName;
     private String header;
@@ -20,7 +21,7 @@ public class doctorlist {
     public doctorlist() {
     }
 
-    public doctorlist(Bitmap propic, String doctorName, String header, boolean notification, String specialist, String location, String time, String date, String distance) {
+    public doctorlist(String id,Bitmap propic, String doctorName, String header, boolean notification, String specialist, String location, String time, String date, String distance) {
         this.propic = propic;
         this.doctorName = doctorName;
         this.header = header;
@@ -30,6 +31,14 @@ public class doctorlist {
         this.time = time;
         this.date = date;
         this.distance = distance;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public Bitmap getPropic() {
@@ -107,7 +116,8 @@ public class doctorlist {
     @Override
     public String toString() {
         return "doctorlist{" +
-                "propic=" + propic +
+                "id='" + id + '\'' +
+                ", propic=" + propic +
                 ", doctorName='" + doctorName + '\'' +
                 ", header='" + header + '\'' +
                 ", notification=" + notification +
