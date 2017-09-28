@@ -18,9 +18,9 @@
         <activity android:name=".apitest.DoctorActivity" />
         <activity
             android:name=".commonactivities.PatientRegistration"
-            android:label="@string/title_activity_patient_registration"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".commonactivities.SplashScreen">
+        <activity android:name=".commonactivities.SplashScreen"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -29,7 +29,6 @@
         </activity>
         <activity
             android:name=".commonactivities.PatientNavActivity"
-            android:label="@string/title_activity_patient_nav"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
