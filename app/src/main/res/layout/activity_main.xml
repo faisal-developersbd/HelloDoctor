@@ -37,6 +37,7 @@
             android:id="@+id/button"
             android:layout_width="246dp"
             android:layout_height="wrap_content"
+            android:background="@drawable/ok_button"
             android:text="Sign In" />
 
         <TextView

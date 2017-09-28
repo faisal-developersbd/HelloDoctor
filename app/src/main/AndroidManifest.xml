@@ -6,12 +6,12 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/logo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".commonactivities.MainActivity"></activity>
+        <activity android:name=".commonactivities.MainActivity" />
         <activity android:name=".commonactivities.SecondActivity" />
         <activity android:name=".commonactivities.LandingActivity" />
         <activity android:name=".commonactivities.DoctorRegistration" />
@@ -30,6 +30,10 @@
         <activity
             android:name=".commonactivities.PatientNavActivity"
             android:label="@string/title_activity_patient_nav"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".commonactivities.DoctorNavActivity"
+            android:label="@string/title_activity_doctor_nav"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

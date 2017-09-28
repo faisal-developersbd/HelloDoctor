@@ -42,6 +42,7 @@
             android:id="@+id/btn_doc_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/ok_button"
             android:text="Button" />
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

@@ -101,12 +101,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:background="@drawable/ok_button"
                 android:text="map" />
 
             <Button
                 android:id="@+id/details_call"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="@drawable/table"
                 android:layout_weight="1"
                 android:text="CALL" />
 
@@ -114,6 +116,7 @@
                 android:id="@+id/details_cancel"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="@drawable/ok_button"
                 android:layout_weight="1"
                 android:text="CANCEL APPOINMENT" />
         </LinearLayout>

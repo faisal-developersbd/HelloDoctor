@@ -61,6 +61,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@drawable/ok_button"
             android:text="ADD" />
 
           <TextView
@@ -72,6 +73,7 @@
             android:id="@+id/time_finish"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@drawable/ok_button"
             android:layout_weight="1"
             android:text="FINISH" />
     </LinearLayout>
