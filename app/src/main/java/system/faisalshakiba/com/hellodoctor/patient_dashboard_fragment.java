@@ -1,6 +1,7 @@
 package system.faisalshakiba.com.hellodoctor;
 
 import android.app.Fragment;
+import android.app.FragmentManager;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -28,7 +29,7 @@ public class patient_dashboard_fragment extends Fragment {
 
     View myview;
     Context context;
-    ListView doctorlist;
+    ListView doctorlistview;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, final ViewGroup container, Bundle savedInstanceState) {
@@ -36,17 +37,17 @@ public class patient_dashboard_fragment extends Fragment {
         context=getActivity().getBaseContext();
         final List<doctorlist> arrayList=new ArrayList<doctorlist>();
         doctorlist dlist=new doctorlist();
-        dlist=new doctorlist(null,"Dr. Hasan","Appoinment 1",true,"Heart Specialist","Mirpur","12:45-01:4","Date","2 km");
+        dlist=new doctorlist("101",null,"Dr. Hasan","Appoinment 1",true,"Heart Specialist","Mirpur","12:45-01:4","Date","2 km");
         arrayList.add(dlist);
-        dlist=new doctorlist(null,"Dr. Mahmud","Appoinment 2",true,"Heart Specialist","Mirpur","12:45-01:4","Date","2 km");
+        dlist=new doctorlist("102",null,"Dr. Mahmud","Appoinment 2",true,"Heart Specialist","Mirpur","12:45-01:4","Date","2 km");
         arrayList.add(dlist);
-        dlist=new doctorlist(null,"Dr. Sagor","Appoinment 3",true,"Heart Specialist","Mirpur","12:45-01:4","Date","2 km");
+        dlist=new doctorlist("103",null,"Dr. Sagor","Appoinment 3",true,"Heart Specialist","Mirpur","12:45-01:4","Date","2 km");
         arrayList.add(dlist);
-        dlist=new doctorlist(null,"Dr. Hossain","Appoinment 4",true,"Heart Specialist","Mirpur","12:45-01:4","Date","2 km");
+        dlist=new doctorlist("104",null,"Dr. Hossain","Appoinment 4",true,"Heart Specialist","Mirpur","12:45-01:4","Date","2 km");
         arrayList.add(dlist);
-        dlist=new doctorlist(null,"Dr. Afroza","Appoinment 5",true,"Heart Specialist","Mirpur","12:45-01:4","Date","2 km");
+        dlist=new doctorlist("105",null,"Dr. Afroza","Appoinment 5",true,"Heart Specialist","Mirpur","12:45-01:4","Date","2 km");
         arrayList.add(dlist);
-        doctorlist=(ListView) myview.findViewById(R.id.listdoctorview);
+        doctorlistview=(ListView) myview.findViewById(R.id.listdoctorview);
         final BaseAdapter adapter=new BaseAdapter() {
             LayoutInflater inflater= (LayoutInflater) getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             @Override
@@ -93,15 +94,22 @@ public class patient_dashboard_fragment extends Fragment {
                 return view;
             }
         };
-        doctorlist.setAdapter(adapter);
-        adapter.notifyDataSetChanged();
-        doctorlist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        doctorlistview.setAdapter(adapter);
+        doctorlistview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                int position=adapterView.getSelectedItemPosition();
-                Toast.makeText(context,"Position: "+position,Toast.LENGTH_LONG).show();
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                int item= (int) doctorlistview.getAdapter().getItem(position);
+
+                doctorlist dl=arrayList.get(item);
+
+                AppoinmentFragment appoinmentFragment=new AppoinmentFragment();
+                appoinmentFragment.setDlist(dl);
+                FragmentManager fragmentManager=getFragmentManager();
+                fragmentManager.beginTransaction().replace(R.id.pat_dashboard,appoinmentFragment).commit();
             }
         });
+        adapter.notifyDataSetChanged();
+
         return  myview;
     }
 }
