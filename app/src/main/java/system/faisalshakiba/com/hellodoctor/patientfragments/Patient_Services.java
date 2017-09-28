@@ -9,9 +9,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import system.faisalshakiba.com.hellodoctor.services.Ambulance_Fragment;
+import system.faisalshakiba.com.hellodoctor.patientfragments.patient_services.Ambulance_Fragment;
 import system.faisalshakiba.com.hellodoctor.R;
-import system.faisalshakiba.com.hellodoctor.services.Rehab_Fragment;
+import system.faisalshakiba.com.hellodoctor.patientfragments.patient_services.Rehab_Fragment;
 
 /**
  * Created by TC on 9/27/2017.

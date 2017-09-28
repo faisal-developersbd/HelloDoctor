@@ -1,4 +1,4 @@
-package system.faisalshakiba.com.hellodoctor.services;
+package system.faisalshakiba.com.hellodoctor.patientfragments.patient_services;
 
 import android.app.Fragment;
 import android.content.Context;

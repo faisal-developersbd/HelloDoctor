@@ -20,6 +20,7 @@ import java.util.List;
 
 import system.faisalshakiba.com.hellodoctor.R;
 import system.faisalshakiba.com.hellodoctor.items.doctorlist;
+import system.faisalshakiba.com.hellodoctor.patientfragments.patient_dashboard.AppoinmentFragment;
 
 /**
  * Created by TC on 9/27/2017.

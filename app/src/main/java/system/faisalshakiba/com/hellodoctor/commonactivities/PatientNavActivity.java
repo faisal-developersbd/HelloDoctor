@@ -25,6 +25,7 @@ import system.faisalshakiba.com.hellodoctor.patientfragments.Patient_TermsCondit
 import system.faisalshakiba.com.hellodoctor.R;
 import system.faisalshakiba.com.hellodoctor.patientfragments.Patient_Doctors_Appoinment;
 import system.faisalshakiba.com.hellodoctor.patientfragments.Patient_Services;
+import system.faisalshakiba.com.hellodoctor.patientfragments.patient_appoinment.DoctorAppoinmentFragment;
 import system.faisalshakiba.com.hellodoctor.patientfragments.patient_dashboard_fragment;
 
 public class PatientNavActivity extends AppCompatActivity
@@ -38,6 +39,7 @@ public class PatientNavActivity extends AppCompatActivity
     Patient_RateUs fragment_Patient_rateUs;
     Patient_TermsConditions fragment_TermsConditions;
     MyAccount_fragment fragment_MyAccount_fragment;
+    DoctorAppoinmentFragment fragment_DoctorAppoinmentFragment;
 
 
     @Override
@@ -73,6 +75,7 @@ public class PatientNavActivity extends AppCompatActivity
         fragment_Patient_services=new Patient_Services();
         fragment_TermsConditions=new Patient_TermsConditions();
         fragment_MyAccount_fragment=new MyAccount_fragment();
+        fragment_DoctorAppoinmentFragment=new DoctorAppoinmentFragment();
         fragmentManager.beginTransaction().replace(R.id.content_patient_nav,patientFragment).commit();
         trackFragment=1;
     }
@@ -135,7 +138,7 @@ public class PatientNavActivity extends AppCompatActivity
             trackFragment=2;
         } else if (id == R.id.nav_doctorsappoinment) {
 
-            fragmentManager.beginTransaction().replace(R.id.content_patient_nav,fragment_PatientDoctorsAppoinment).commit();
+            fragmentManager.beginTransaction().replace(R.id.content_patient_nav,fragment_DoctorAppoinmentFragment).commit();
             trackFragment=3;
         } else if (id == R.id.nav_services) {
 
