@@ -1,4 +1,4 @@
-package system.faisalshakiba.com.hellodoctor;
+package system.faisalshakiba.com.hellodoctor.commonactivities;
 
 import android.content.Intent;
 import android.os.Handler;
@@ -6,8 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
-import android.view.animation.AnimationUtils;
-import android.widget.ImageView;
+
+import system.faisalshakiba.com.hellodoctor.R;
 
 public class SplashScreen extends AppCompatActivity {
 

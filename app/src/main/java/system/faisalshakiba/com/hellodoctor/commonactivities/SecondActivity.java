@@ -1,15 +1,13 @@
-package system.faisalshakiba.com.hellodoctor;
+package system.faisalshakiba.com.hellodoctor.commonactivities;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.view.animation.AnimationUtils;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.RadioButton;
-import android.widget.Toast;
+
+import system.faisalshakiba.com.hellodoctor.R;
 
 public class SecondActivity extends AppCompatActivity {
     RadioButton patient,doctor;
@@ -44,7 +42,7 @@ public class SecondActivity extends AppCompatActivity {
                 else if(doctor.isChecked())
                 {
                     Intent intent2=new Intent(SecondActivity.this,LandingActivity.class);
-                    intent2.putExtra("user","patient");
+                    intent2.putExtra("user","doctor");
                     startActivity(intent2);
                     finish();
                 }

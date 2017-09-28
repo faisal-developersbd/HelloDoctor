@@ -7,9 +7,14 @@
             android:icon="@drawable/dashboard"
             android:title="Dashboard" />
         <item
+            android:id="@+id/nav_account"
+            android:icon="@drawable/pro_pic"
+            android:title="My Account" />
+        <item
             android:id="@+id/nav_aboutus"
             android:icon="@drawable/aboutus"
             android:title="About Us" />
+
         <item
             android:id="@+id/nav_doctorsappoinment"
             android:icon="@drawable/doctors_appoinment"

@@ -1,4 +1,4 @@
-package system.faisalshakiba.com.hellodoctor;
+package system.faisalshakiba.com.hellodoctor.server;
 
 import android.util.Log;
 

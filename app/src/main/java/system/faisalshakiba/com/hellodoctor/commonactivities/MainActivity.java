@@ -1,8 +1,10 @@
-package system.faisalshakiba.com.hellodoctor;
+package system.faisalshakiba.com.hellodoctor.commonactivities;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import system.faisalshakiba.com.hellodoctor.R;
 
 public class MainActivity extends AppCompatActivity {
 

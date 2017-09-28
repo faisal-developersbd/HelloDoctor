@@ -11,22 +11,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"></activity>
-        <activity android:name=".SecondActivity" />
-        <activity android:name=".LandingActivity" />
-        <activity android:name=".DoctorRegistration" />
-        <activity android:name=".ThirdActivity" />
-        <activity android:name=".DoctorActivity" />
-        <activity android:name=".AppoinmentActivity" />
+        <activity android:name=".commonactivities.MainActivity"></activity>
+        <activity android:name=".commonactivities.SecondActivity" />
+        <activity android:name=".commonactivities.LandingActivity" />
+        <activity android:name=".commonactivities.DoctorRegistration" />
+        <activity android:name=".apitest.DoctorActivity" />
         <activity
-            android:name=".PatientRegistration"
+            android:name=".commonactivities.PatientRegistration"
             android:label="@string/title_activity_patient_registration"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".CreateTimeActivity"
-            android:label="@string/title_activity_create_time"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".SplashScreen">
+        <activity android:name=".commonactivities.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -34,7 +28,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".PatientNavActivity"
+            android:name=".commonactivities.PatientNavActivity"
             android:label="@string/title_activity_patient_nav"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>

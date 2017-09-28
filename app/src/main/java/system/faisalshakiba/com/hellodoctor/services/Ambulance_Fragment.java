@@ -1,4 +1,4 @@
-package system.faisalshakiba.com.hellodoctor;
+package system.faisalshakiba.com.hellodoctor.services;
 
 import android.app.Fragment;
 import android.content.Context;
@@ -16,6 +16,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
+import system.faisalshakiba.com.hellodoctor.R;
 import system.faisalshakiba.com.hellodoctor.items.AmulanceListing;
 
 /**

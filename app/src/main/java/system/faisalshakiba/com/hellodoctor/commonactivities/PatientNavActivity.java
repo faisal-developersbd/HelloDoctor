@@ -1,7 +1,9 @@
-package system.faisalshakiba.com.hellodoctor;
+package system.faisalshakiba.com.hellodoctor.commonactivities;
 
 
 import android.app.FragmentManager;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -16,7 +18,14 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import system.faisalshakiba.com.hellodoctor.items.doctorlist;
+import system.faisalshakiba.com.hellodoctor.patientfragments.MyAccount_fragment;
+import system.faisalshakiba.com.hellodoctor.patientfragments.Patient_About;
+import system.faisalshakiba.com.hellodoctor.patientfragments.Patient_RateUs;
+import system.faisalshakiba.com.hellodoctor.patientfragments.Patient_TermsConditions;
+import system.faisalshakiba.com.hellodoctor.R;
+import system.faisalshakiba.com.hellodoctor.patientfragments.Patient_Doctors_Appoinment;
+import system.faisalshakiba.com.hellodoctor.patientfragments.Patient_Services;
+import system.faisalshakiba.com.hellodoctor.patientfragments.patient_dashboard_fragment;
 
 public class PatientNavActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -28,6 +37,7 @@ public class PatientNavActivity extends AppCompatActivity
     Patient_Services fragment_Patient_services;
     Patient_RateUs fragment_Patient_rateUs;
     Patient_TermsConditions fragment_TermsConditions;
+    MyAccount_fragment fragment_MyAccount_fragment;
 
 
     @Override
@@ -62,6 +72,7 @@ public class PatientNavActivity extends AppCompatActivity
         fragment_Patient_rateUs=new Patient_RateUs();
         fragment_Patient_services=new Patient_Services();
         fragment_TermsConditions=new Patient_TermsConditions();
+        fragment_MyAccount_fragment=new MyAccount_fragment();
         fragmentManager.beginTransaction().replace(R.id.content_patient_nav,patientFragment).commit();
         trackFragment=1;
     }
@@ -95,6 +106,14 @@ public class PatientNavActivity extends AppCompatActivity
         if (id == R.id.action_settings) {
             return true;
         }
+        if (id == R.id.action_logout) {
+
+            Intent intent=new Intent(PatientNavActivity.this,LandingActivity.class);
+            intent.putExtra("user","patient");
+            startActivity(intent);
+            this.finish();
+            return true;
+        }
 
         return super.onOptionsItemSelected(item);
     }
@@ -111,28 +130,32 @@ public class PatientNavActivity extends AppCompatActivity
             fragmentManager.beginTransaction().replace(R.id.content_patient_nav,patientFragment).commit();
             trackFragment=1;
         } else if (id == R.id.nav_aboutus) {
-            patient_dashboard_fragment patientFragment=new patient_dashboard_fragment();
+
             fragmentManager.beginTransaction().replace(R.id.content_patient_nav,fragment_Patient_about).commit();
             trackFragment=2;
         } else if (id == R.id.nav_doctorsappoinment) {
-            patient_dashboard_fragment patientFragment=new patient_dashboard_fragment();
+
             fragmentManager.beginTransaction().replace(R.id.content_patient_nav,fragment_PatientDoctorsAppoinment).commit();
             trackFragment=3;
         } else if (id == R.id.nav_services) {
-            patient_dashboard_fragment patientFragment=new patient_dashboard_fragment();
+
             fragmentManager.beginTransaction().replace(R.id.content_patient_nav,fragment_Patient_services).commit();
             trackFragment=4;
         }
         else if (id == R.id.nav_rateus) {
-            patient_dashboard_fragment patientFragment=new patient_dashboard_fragment();
+
             fragmentManager.beginTransaction().replace(R.id.content_patient_nav,fragment_Patient_rateUs).commit();
             trackFragment=5;
         }
         else if (id == R.id.nav_termsconditions) {
-            patient_dashboard_fragment patientFragment=new patient_dashboard_fragment();
+
             fragmentManager.beginTransaction().replace(R.id.content_patient_nav,fragment_TermsConditions).commit();
             trackFragment=6;
-        } else if (id == R.id.nav_share) {
+        } else if (id == R.id.nav_account) {
+
+            fragmentManager.beginTransaction().replace(R.id.content_patient_nav,fragment_MyAccount_fragment).commit();
+            trackFragment=7;
+        }else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_send) {
 

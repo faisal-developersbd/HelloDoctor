@@ -1,10 +1,13 @@
-package system.faisalshakiba.com.hellodoctor;
+package system.faisalshakiba.com.hellodoctor.apitest;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+
+import system.faisalshakiba.com.hellodoctor.R;
+import system.faisalshakiba.com.hellodoctor.server.BackgroundWorker;
 
 public class DoctorActivity extends AppCompatActivity {
     Button loginDoc;
