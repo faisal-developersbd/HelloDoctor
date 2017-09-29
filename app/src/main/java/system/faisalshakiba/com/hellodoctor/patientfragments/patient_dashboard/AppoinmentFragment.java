@@ -21,11 +21,11 @@ import java.util.ArrayList;
 import java.util.Locale;
 
 import system.faisalshakiba.com.hellodoctor.R;
-<<<<<<< HEAD
+
 import system.faisalshakiba.com.hellodoctor.VoiceFeature;
-=======
+
 import system.faisalshakiba.com.hellodoctor.VideoActivity;
->>>>>>> e418e8e23e318043bd76288dfc1e1a540fc44a76
+
 import system.faisalshakiba.com.hellodoctor.items.doctorlist;
 import system.faisalshakiba.com.hellodoctor.items.time;
 
