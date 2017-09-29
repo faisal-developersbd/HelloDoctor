@@ -2,6 +2,7 @@ package system.faisalshakiba.com.hellodoctor.patientfragments.patient_dashboard;
 
 import android.app.Fragment;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -16,6 +17,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 import system.faisalshakiba.com.hellodoctor.R;
+import system.faisalshakiba.com.hellodoctor.VideoActivity;
 import system.faisalshakiba.com.hellodoctor.items.doctorlist;
 import system.faisalshakiba.com.hellodoctor.items.time;
 
@@ -49,6 +51,17 @@ public class AppoinmentFragment extends Fragment {
         map=(Button)myview.findViewById(R.id.details_map);
         call=(Button)myview.findViewById(R.id.details_call);
         cancel=(Button)myview.findViewById(R.id.details_cancel);
+
+        //Button Call to VideoActivity
+
+        call.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Context context=getActivity().getBaseContext();
+                Intent myIntent=new Intent(context,VideoActivity.class);
+                startActivity(myIntent);
+            }
+        });
 
         //setting values
         if(dlist!=null)

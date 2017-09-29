@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="system.faisalshakiba.com.hellodoctor">
 
+    <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -19,7 +20,8 @@
         <activity
             android:name=".commonactivities.PatientRegistration"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".commonactivities.SplashScreen"
+        <activity
+            android:name=".commonactivities.SplashScreen"
             android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -34,7 +36,8 @@
         <activity
             android:name=".commonactivities.DoctorNavActivity"
             android:label="@string/title_activity_doctor_nav"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".VideoActivity"></activity>
     </application>
 
 </manifest>
