@@ -42,13 +42,13 @@
             android:name=".commonactivities.DoctorNavActivity"
             android:label="@string/title_activity_doctor_nav"
             android:theme="@style/AppTheme.NoActionBar" />
-<<<<<<< HEAD
+
         <activity
-            android:name=".LoginActivity"
+            android:name=".extra.LoginActivity"
             android:label="@string/title_activity_login"></activity>
-=======
+
         <activity android:name=".VideoActivity"></activity>
->>>>>>> e418e8e23e318043bd76288dfc1e1a540fc44a76
+
     </application>
 
 </manifest>
