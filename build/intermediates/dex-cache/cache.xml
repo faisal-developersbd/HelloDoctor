@@ -3,30 +3,30 @@
 
     <item
         is-multidex="true"
-        jar="E:\Android github\HelloDoctor\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jar="D:\Github\HelloDoctor\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="26.0.1"
-        sha1="a76000e2583040810cb029fe8192d5f721106ed2">
-        <dex dex="E:\Android github\HelloDoctor\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_8b8bb4d51fe3b237223e8c6e8eae856310030fb5\classes.dex" />
+        sha1="58367dfc6e7f84e4f13a6992f9cf6bb2f9827b83">
+        <dex dex="D:\Github\HelloDoctor\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_03bc261e6df44ec805ad4b0b1ea5ce082e988922\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="E:\Android github\HelloDoctor\app\libs\vidyoclient.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.1"
-        sha1="9bd31ee7069fcc5b93518f2f9b612ab85c9536f9">
-        <dex dex="E:\Android github\HelloDoctor\app\build\intermediates\transforms\dex\debug\folders\1000\2\vidyoclient_2b7f566c930e71f35f48ab90c9742dd003bc1be0\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="E:\Android github\HelloDoctor\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jar="D:\Github\HelloDoctor\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="26.0.1"
         sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
-        <dex dex="E:\Android github\HelloDoctor\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_805c3f6df94375a8eabc0ed104551c2066709b32\classes.dex" />
+        <dex dex="D:\Github\HelloDoctor\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_1b2d165f81d218805a74bba32dae3d7f0d73aae3\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Github\HelloDoctor\app\libs\vidyoclient.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="9bd31ee7069fcc5b93518f2f9b612ab85c9536f9">
+        <dex dex="D:\Github\HelloDoctor\app\build\intermediates\transforms\dex\debug\folders\1000\2\vidyoclient_65b0610549b6e8689821e8c8859395b1f02c6c18\classes.dex" />
     </item>
 
 </items>
