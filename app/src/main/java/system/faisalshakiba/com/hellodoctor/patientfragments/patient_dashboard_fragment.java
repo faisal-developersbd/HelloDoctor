@@ -2,8 +2,11 @@ package system.faisalshakiba.com.hellodoctor.patientfragments;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.content.ActivityNotFoundException;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.speech.RecognizerIntent;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,13 +17,21 @@ import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
+
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+import java.util.Locale;
 
 import system.faisalshakiba.com.hellodoctor.R;
+import system.faisalshakiba.com.hellodoctor.VoiceFeature;
 import system.faisalshakiba.com.hellodoctor.items.doctorlist;
 import system.faisalshakiba.com.hellodoctor.patientfragments.patient_dashboard.AppoinmentFragment;
+
+import static android.app.Activity.RESULT_OK;
+import static java.lang.Thread.sleep;
 
 /**
  * Created by TC on 9/27/2017.
@@ -31,13 +42,20 @@ public class patient_dashboard_fragment extends Fragment {
     View myview;
     Context context;
     ListView doctorlistview;
+    VoiceFeature vf;
+    String cmd="";
+    Thread thread;
+    String wordString="";
+    doctorlist dlist;
+    private final int REQ_CODE_SPEECH_INPUT = 100;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, final ViewGroup container, Bundle savedInstanceState) {
         myview = inflater.inflate(R.layout.patient_dashboard, container, false);
         context=getActivity().getBaseContext();
+        vf=new VoiceFeature(context);
         final List<doctorlist> arrayList=new ArrayList<doctorlist>();
-        doctorlist dlist=new doctorlist();
+         dlist=new doctorlist();
         dlist=new doctorlist("101",null,"Dr. Hasan","Appoinment 1",true,"Heart Specialist","Mirpur","12:45-01:4","Date","2 km");
         arrayList.add(dlist);
         dlist=new doctorlist("102",null,"Dr. Mahmud","Appoinment 2",true,"Heart Specialist","Mirpur","12:45-01:4","Date","2 km");
@@ -110,7 +128,115 @@ public class patient_dashboard_fragment extends Fragment {
             }
         });
         adapter.notifyDataSetChanged();
-
+        set_getWordString("Good "+vf.getevent()+"! Do you need anything sir?");
+        cmdThread();
         return  myview;
+    }
+    public String set_getWordString(String wordString)
+    {
+        this.wordString=wordString;
+        return wordString;
+    }
+    void promptSpeechInput() {
+        Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
+        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,
+                RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
+        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault());
+        intent.putExtra(RecognizerIntent.EXTRA_PROMPT,
+                "Speak Something!");
+        try {
+             startActivityForResult(intent, REQ_CODE_SPEECH_INPUT);
+
+        } catch (ActivityNotFoundException a) {
+
+        }
+    }
+    public void cmdThread()
+    {
+        thread=new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    sleep(1000);
+                    vf.speakWords(wordString);
+                    sleep(3000);
+                    promptSpeechInput();
+
+                }catch (Exception e)
+                {
+
+                }
+            }
+
+        });
+        thread.start();
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        switch (requestCode) {
+            case REQ_CODE_SPEECH_INPUT: {
+                if (resultCode == RESULT_OK && null != data) {
+
+                    ArrayList<String> result = data
+                            .getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
+
+                    cmd=result.get(0);
+                    Toast.makeText(context,"Cmd: "+cmd,Toast.LENGTH_LONG).show();
+                    if (cmd.equals("yes"))
+                    {
+
+//
+
+                            set_getWordString("What do you like me to do sir?");
+                            cmdThread();
+
+                    }
+                    else if (cmd.equals("no")||cmd.equals("exit")||cmd.equals("you may exit now"))
+                    {
+
+//
+
+
+                        vf.speakWords( set_getWordString("Good bye, sir!"));
+                        //cmdThread();
+
+                    }
+                    else if (cmd.equals("who are you"))
+                    {
+
+//
+
+                        set_getWordString("I am a new AI, installed for assist you, sir.");
+                        cmdThread();
+
+                    }
+                    else if (cmd.equals("amazing")||cmd.equals("thats great"))
+                    {
+
+//
+
+                        set_getWordString("thank you, sir.");
+                        cmdThread();
+
+                    }
+
+                    else
+                    {
+
+//
+
+                        set_getWordString("Sorry sir, I don't recognize. I voice recognation fetures are limited yet.");
+                        cmdThread();
+
+                    }
+
+                }
+                break;
+            }
+
+        }
     }
 }
