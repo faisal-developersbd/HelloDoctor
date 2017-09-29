@@ -37,7 +37,7 @@ public class DoctorAppoinmentFragment extends Fragment {
                     case MotionEvent.ACTION_UP:
                         view.setAlpha(1f);
                         FragmentManager fragmentManager=getFragmentManager();
-                        fragmentManager.beginTransaction().replace(R.id.fragment_doctors_appoinmentn,new Fragment_mental()).commit();
+                        fragmentManager.beginTransaction().replace(R.id.content_patient_nav,new Fragment_mental()).commit();
                         break;
                     case MotionEvent.ACTION_MOVE:break;
                 }
@@ -55,7 +55,7 @@ public class DoctorAppoinmentFragment extends Fragment {
                     case MotionEvent.ACTION_UP:
                         view.setAlpha(1f);
                         FragmentManager fragmentManager=getFragmentManager();
-                        fragmentManager.beginTransaction().replace(R.id.fragment_doctors_appoinmentn,new Fragment_Physical()).commit();
+                        fragmentManager.beginTransaction().replace(R.id.content_patient_nav,new Fragment_Physical()).commit();
                         break;
                     case MotionEvent.ACTION_MOVE:break;
                 }

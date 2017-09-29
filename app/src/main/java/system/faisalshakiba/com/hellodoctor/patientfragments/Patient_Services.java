@@ -33,7 +33,7 @@ public class Patient_Services extends Fragment {
             @Override
             public void onClick(View view) {
                 FragmentManager fragmentManager=getFragmentManager();
-                fragmentManager.beginTransaction().replace(R.id.layout_service,new Ambulance_Fragment()).commit();
+                fragmentManager.beginTransaction().replace(R.id.content_patient_nav,new Ambulance_Fragment()).commit();
             }
         });
 
@@ -41,7 +41,7 @@ public class Patient_Services extends Fragment {
             @Override
             public void onClick(View view) {
                 FragmentManager fragmentManager=getFragmentManager();
-                fragmentManager.beginTransaction().replace(R.id.layout_service,new Rehab_Fragment()).commit();
+                fragmentManager.beginTransaction().replace(R.id.content_patient_nav,new Rehab_Fragment()).commit();
             }
         });
 

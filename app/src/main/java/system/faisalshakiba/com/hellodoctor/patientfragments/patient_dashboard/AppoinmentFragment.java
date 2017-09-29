@@ -3,21 +3,28 @@ package system.faisalshakiba.com.hellodoctor.patientfragments.patient_dashboard;
 import android.app.Fragment;
 import android.content.Context;
 import android.os.Bundle;
+import android.speech.tts.TextToSpeech;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 import system.faisalshakiba.com.hellodoctor.R;
+import system.faisalshakiba.com.hellodoctor.VoiceFeature;
 import system.faisalshakiba.com.hellodoctor.items.doctorlist;
 import system.faisalshakiba.com.hellodoctor.items.time;
+
+import static java.lang.Thread.sleep;
 
 /**
  * Created by TC on 9/28/2017.
@@ -34,7 +41,9 @@ public class AppoinmentFragment extends Fragment {
     Button map,call,cancel;
     doctorlist dlist=null;
     View myview;
-
+    TextToSpeech ts;
+    Context context;
+    VoiceFeature vf;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, final ViewGroup container, Bundle savedInstanceState) {
@@ -49,6 +58,17 @@ public class AppoinmentFragment extends Fragment {
         map=(Button)myview.findViewById(R.id.details_map);
         call=(Button)myview.findViewById(R.id.details_call);
         cancel=(Button)myview.findViewById(R.id.details_cancel);
+        context=getActivity().getBaseContext();
+        vf=new VoiceFeature(context);
+        ts=new TextToSpeech(context, new TextToSpeech.OnInitListener() {
+            @Override
+            public void onInit(int status) {
+                if(status != TextToSpeech.ERROR) {
+                    ts.setLanguage(Locale.UK);
+                }
+            }
+        });
+
 
         //setting values
         if(dlist!=null)
@@ -69,7 +89,7 @@ public class AppoinmentFragment extends Fragment {
 
         final  ArrayList<time> arrayList=new ArrayList<>();
         time t=new time();
-         t=new time(11,"12/05/2017","12:55","PG Hospital","visit after 12/06/2017");
+         t=new time(12,"12/05/2017","12:55","PG Hospital","visit after 12/06/2017");
         arrayList.add(t);
          t=new time(16,"12/05/2017","12:45","PG Hospital","visit after 17/06/2017");
         arrayList.add(t);
@@ -119,9 +139,53 @@ public class AppoinmentFragment extends Fragment {
             }
         };
         listhistory.setAdapter(adapter);
+
         adapter.notifyDataSetChanged();
+
+//        final Thread thread=new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//
+//                try {
+//                    sleep(1000);
+//                    vf.speakWords("Good Moring sir!");
+//
+//                } catch (InterruptedException e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//        });
+//        thread.start();
+        listhistory.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+//                String toSpeak="Good Morning Sir! You have 1 appoinment today!";
+//                speakWords(toSpeak);
+             //   Toast.makeText(context,toSpeak,Toast.LENGTH_LONG).show();
+            }
+        });
+
         return myview;
     }
+    // speak the user text
+    private void speakWords(String speech) {
+
+        // speak straight away
+        if(ts != null)
+        {
+            ts.speak(speech, TextToSpeech.QUEUE_FLUSH, null);
+        }
+    }
+
+    @Override
+    public void onPause() {
+        if(ts !=null){
+            ts.stop();
+            ts.shutdown();
+        }
+        super.onPause();
+    }
+
     public void setDlist(doctorlist dlist)
     {
         this.dlist=dlist;
