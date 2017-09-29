@@ -3,21 +3,30 @@
 
     <item
         is-multidex="true"
-        jar="D:\Github\HelloDoctor\HelloDoctor\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jar="E:\Android github\HelloDoctor\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="26.0.1"
-        sha1="71359712db2885a3a94ad877d2af15687246d83c">
-        <dex dex="D:\Github\HelloDoctor\HelloDoctor\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_32c147722406a6d55b2fdb018b7f2a0eb94dd4bb\classes.dex" />
+        sha1="a76000e2583040810cb029fe8192d5f721106ed2">
+        <dex dex="E:\Android github\HelloDoctor\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_8b8bb4d51fe3b237223e8c6e8eae856310030fb5\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="D:\Github\HelloDoctor\HelloDoctor\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jar="E:\Android github\HelloDoctor\app\libs\vidyoclient.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="9bd31ee7069fcc5b93518f2f9b612ab85c9536f9">
+        <dex dex="E:\Android github\HelloDoctor\app\build\intermediates\transforms\dex\debug\folders\1000\2\vidyoclient_2b7f566c930e71f35f48ab90c9742dd003bc1be0\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="E:\Android github\HelloDoctor\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="26.0.1"
         sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
-        <dex dex="D:\Github\HelloDoctor\HelloDoctor\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_9fb531a40ffe6596311157570e54a1b9e118b7d6\classes.dex" />
+        <dex dex="E:\Android github\HelloDoctor\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_805c3f6df94375a8eabc0ed104551c2066709b32\classes.dex" />
     </item>
 
 </items>
