@@ -2,6 +2,7 @@ package system.faisalshakiba.com.hellodoctor.patientfragments.patient_dashboard;
 
 import android.app.Fragment;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.support.annotation.Nullable;
@@ -20,7 +21,11 @@ import java.util.ArrayList;
 import java.util.Locale;
 
 import system.faisalshakiba.com.hellodoctor.R;
+<<<<<<< HEAD
 import system.faisalshakiba.com.hellodoctor.VoiceFeature;
+=======
+import system.faisalshakiba.com.hellodoctor.VideoActivity;
+>>>>>>> e418e8e23e318043bd76288dfc1e1a540fc44a76
 import system.faisalshakiba.com.hellodoctor.items.doctorlist;
 import system.faisalshakiba.com.hellodoctor.items.time;
 
@@ -69,6 +74,17 @@ public class AppoinmentFragment extends Fragment {
             }
         });
 
+
+        //Button Call to VideoActivity
+
+        call.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Context context=getActivity().getBaseContext();
+                Intent myIntent=new Intent(context,VideoActivity.class);
+                startActivity(myIntent);
+            }
+        });
 
         //setting values
         if(dlist!=null)
