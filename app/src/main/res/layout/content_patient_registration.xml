@@ -68,12 +68,12 @@
                         android:orientation="vertical">
 
                         <Spinner
-                            android:id="@+id/d_sp_id"
+                            android:id="@+id/p_sp_id"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content" />
 
                         <EditText
-                            android:id="@+id/d_id"
+                            android:id="@+id/p_id"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:ems="10"
@@ -81,7 +81,7 @@
                             android:inputType="textPersonName" />
 
                         <EditText
-                            android:id="@+id/d_name"
+                            android:id="@+id/p_name"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:ems="10"
@@ -89,7 +89,7 @@
                             android:inputType="textPersonName" />
 
                         <EditText
-                            android:id="@+id/d_password"
+                            android:id="@+id/p_password"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:ems="10"
@@ -97,7 +97,7 @@
                             android:inputType="numberPassword" />
 
                         <EditText
-                            android:id="@+id/d_mobile"
+                            android:id="@+id/p_mobile"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:ems="10"
@@ -105,7 +105,7 @@
                             android:inputType="textPersonName" />
 
                         <EditText
-                            android:id="@+id/editText12"
+                            android:id="@+id/p_email"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:ems="10"
@@ -245,14 +245,14 @@
                             android:orientation="horizontal">
 
                             <Button
-                                android:id="@+id/pr_back"
+                                android:id="@+id/p_back"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:text="BACK" />
 
                             <Button
-                                android:id="@+id/pr_signup"
+                                android:id="@+id/p_signup"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="right"

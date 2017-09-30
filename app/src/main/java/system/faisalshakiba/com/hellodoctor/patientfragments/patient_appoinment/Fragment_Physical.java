@@ -1,6 +1,7 @@
 package system.faisalshakiba.com.hellodoctor.patientfragments.patient_appoinment;
 
 import android.app.Fragment;
+import android.app.FragmentManager;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -10,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -31,6 +33,7 @@ public class Fragment_Physical extends Fragment {
     Spinner spinner;
     ListView listView;
     View myview;
+    Button back;
 Context context;
     doctorlist dlist;
     @Nullable
@@ -68,7 +71,15 @@ Context context;
         ArrayAdapter<String> myadapter=new ArrayAdapter<String>(context,android.R.layout.simple_list_item_1,items);
         myadapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(myadapter);
+        back=myview.findViewById(R.id.physical_back);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentManager fragmentManager=getFragmentManager();
 
+                fragmentManager.beginTransaction().replace(R.id.content_patient_nav,new DoctorAppoinmentFragment()).commit();
+            }
+        });
         final List<doctorlist> arrayList=new ArrayList<doctorlist>();
          dlist=new doctorlist();
 

@@ -1,6 +1,7 @@
 package system.faisalshakiba.com.hellodoctor.patientfragments.patient_services;
 
 import android.app.Fragment;
+import android.app.FragmentManager;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -19,6 +21,8 @@ import java.util.List;
 
 import system.faisalshakiba.com.hellodoctor.R;
 import system.faisalshakiba.com.hellodoctor.items.RehabListing;
+import system.faisalshakiba.com.hellodoctor.patientfragments.Patient_Services;
+import system.faisalshakiba.com.hellodoctor.patientfragments.patient_dashboard_fragment;
 
 /**
  * Created by faisal-shakiba on 9/28/2017.
@@ -29,6 +33,7 @@ public class Rehab_Fragment extends Fragment {
     View myview;
     Context context;
     ListView rehab;
+    Button back;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, final ViewGroup container, Bundle savedInstanceState) {
@@ -48,7 +53,15 @@ public class Rehab_Fragment extends Fragment {
         arrayList.add(dlist);
 
         rehab=(ListView) myview.findViewById(R.id.listrehabview);
+        back=(Button)  myview.findViewById(R.id.rehab_back);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentManager fragmentManager=getFragmentManager();
 
+                fragmentManager.beginTransaction().replace(R.id.content_patient_nav,new Patient_Services()).commit();
+            }
+        });
         final BaseAdapter adapter=new BaseAdapter() {
             LayoutInflater inflater= (LayoutInflater) getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             @Override

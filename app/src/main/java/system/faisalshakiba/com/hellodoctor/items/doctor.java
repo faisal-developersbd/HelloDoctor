@@ -16,21 +16,21 @@ import java.sql.Blob;
 
 public class doctor implements Serializable{
 
-    int doc_id;
+    String doc_id;
     String name;
     String password;
     String mobile;
     String email;
     Blob picture;
-    int fees;
-    int sp_id;
-    int time_id;
+    String fees;
+    String sp_id;
+    String time_id;
     String note;
 
     public doctor() {
     }
 
-    public doctor(int doc_id, String name,String password, String mobile, String email, Blob picture, int fees, int sp_id, int time_id,String note) {
+    public doctor(String doc_id, String name,String password, String mobile, String email, Blob picture, String fees, String sp_id, String time_id,String note) {
         this.doc_id = doc_id;
         this.name = name;
         this.mobile = mobile;
@@ -43,11 +43,11 @@ public class doctor implements Serializable{
         this.note=note;
     }
 
-    public int getDoc_id() {
+    public String getDoc_id() {
         return doc_id;
     }
 
-    public void setDoc_id(int doc_id) {
+    public void setDoc_id(String doc_id) {
         this.doc_id = doc_id;
     }
 
@@ -93,27 +93,27 @@ public class doctor implements Serializable{
         this.picture = picture;
     }
 
-    public int getFees() {
+    public String getFees() {
         return fees;
     }
 
-    public void setFees(int fees) {
+    public void setFees(String fees) {
         this.fees = fees;
     }
 
-    public int getSp_id() {
+    public String getSp_id() {
         return sp_id;
     }
 
-    public void setSp_id(int sp_id) {
+    public void setSp_id(String sp_id) {
         this.sp_id = sp_id;
     }
 
-    public int getTime_id() {
+    public String getTime_id() {
         return time_id;
     }
 
-    public void setTime_id(int time_id) {
+    public void setTime_id(String time_id) {
         this.time_id = time_id;
     }
 

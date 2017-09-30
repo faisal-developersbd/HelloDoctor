@@ -1,6 +1,7 @@
 package system.faisalshakiba.com.hellodoctor.patientfragments.patient_appoinment;
 
 import android.app.Fragment;
+import android.app.FragmentManager;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -10,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -22,6 +24,7 @@ import java.util.List;
 
 import system.faisalshakiba.com.hellodoctor.R;
 import system.faisalshakiba.com.hellodoctor.items.doctorlist;
+import system.faisalshakiba.com.hellodoctor.patientfragments.patient_dashboard_fragment;
 
 /**
  * Created by TC on 9/28/2017.
@@ -33,6 +36,7 @@ public class Fragment_mental extends Fragment {
     ListView listView;
     Spinner spinner;
     doctorlist dlist;
+    Button back;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, final ViewGroup container, Bundle savedInstanceState) {
@@ -60,7 +64,15 @@ public class Fragment_mental extends Fragment {
         myadapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(myadapter);
 
+        back=myview.findViewById(R.id.mental_back);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentManager fragmentManager=getFragmentManager();
 
+                fragmentManager.beginTransaction().replace(R.id.content_patient_nav,new DoctorAppoinmentFragment()).commit();
+            }
+        });
 
         // listView=(ListView) myview.findViewById(R.id.listdoctorview);
         final BaseAdapter adapter=new BaseAdapter() {
@@ -110,8 +122,10 @@ public class Fragment_mental extends Fragment {
                 return view;
             }
         };
+
         listView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
+
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {

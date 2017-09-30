@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import system.faisalshakiba.com.hellodoctor.R;
 import system.faisalshakiba.com.hellodoctor.server.BackgroundWorker;
@@ -33,6 +34,7 @@ public class DoctorActivity extends AppCompatActivity {
                 String method="create_time";
                 BackgroundWorker worker=new BackgroundWorker(DoctorActivity.this,url);
                 worker.execute(method,i_id,i_password,"1234","1234");
+                Toast.makeText(getBaseContext(),"OK",Toast.LENGTH_LONG).show();
             }
         });
 

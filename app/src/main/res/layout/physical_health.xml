@@ -37,6 +37,12 @@
                 android:id="@+id/physical_listview"
                 android:layout_height="match_parent"
                 android:layout_weight="1" />
+            <Button
+                android:id="@+id/physical_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:text="BACK" />
 
         </LinearLayout>
 

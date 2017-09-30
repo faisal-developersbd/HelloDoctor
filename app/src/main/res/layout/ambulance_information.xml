@@ -2,22 +2,30 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:background="@drawable/d_background"
+    android:id="@+id/ambulance_info"
     android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="horizontal">
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
                 android:orientation="vertical">
                 <ListView
                     android:id="@+id/listambulanceview"
                     android:layout_width="match_parent"
+                    android:layout_weight="1"
                     android:layout_height="match_parent" />
-
+                <Button
+                    android:id="@+id/ambulance_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:text="BACK" />
             </LinearLayout>
 
 

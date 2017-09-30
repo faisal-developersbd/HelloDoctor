@@ -1,6 +1,7 @@
 package system.faisalshakiba.com.hellodoctor.patientfragments.patient_services;
 
 import android.app.Fragment;
+import android.app.FragmentManager;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,6 +20,8 @@ import java.util.List;
 
 import system.faisalshakiba.com.hellodoctor.R;
 import system.faisalshakiba.com.hellodoctor.items.AmulanceListing;
+import system.faisalshakiba.com.hellodoctor.patientfragments.Patient_Services;
+import system.faisalshakiba.com.hellodoctor.patientfragments.patient_dashboard_fragment;
 
 /**
  * Created by faisal-shakiba on 9/28/2017.
@@ -27,6 +31,7 @@ public class Ambulance_Fragment extends Fragment {
     View myview;
     Context context;
     ListView ambulance;
+    Button back;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, final ViewGroup container, Bundle savedInstanceState) {
@@ -43,7 +48,15 @@ public class Ambulance_Fragment extends Fragment {
         arrayList.add(dlist);
         dlist=new AmulanceListing("4","Medinova","01719947894","500");
         arrayList.add(dlist);
+        back=(Button)  myview.findViewById(R.id.ambulance_back);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentManager fragmentManager=getFragmentManager();
 
+                fragmentManager.beginTransaction().replace(R.id.content_patient_nav,new Patient_Services()).commit();
+            }
+        });
         ambulance=(ListView) myview.findViewById(R.id.listambulanceview);
 
         final BaseAdapter adapter=new BaseAdapter() {

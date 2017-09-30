@@ -107,7 +107,8 @@ public class ApiCall {
                         +URLEncoder.encode("password","UTF-8")+"="+URLEncoder.encode(password,"UTF-8")+"&" //change 3
                         +URLEncoder.encode("mobile","UTF-8")+"="+URLEncoder.encode(phone,"UTF-8")+"&" //change 3
                         +URLEncoder.encode("email","UTF-8")+"="+URLEncoder.encode(mail,"UTF-8");
-                Log.d("serverexception","Data: "+""+post_data);
+                Log.d("spring","Data: "+""+post_data);
+
                 bufferedWriter.write(post_data);
                 bufferedWriter.flush();
                 bufferedWriter.close();
@@ -117,27 +118,24 @@ public class ApiCall {
                 String line = null;
                 while ((line = bufferedReader.readLine()) != null) {
                     sb.append(line + "\n");
-                    Log.d("serverexception","Response: "+sb.toString());
+                    Log.d("spring","Response: "+sb.toString());
                 }
                 bufferedReader.close();
 
                 this.result=sb.toString();
                 Log.d("serverexception","result: "+result);
-
+                inputStream.close();
+                httpURLConnection.disconnect();
             } catch (IOException e) {
                 Log.d("serverexception","Error: "+e);
 
             }
             return result;
-        } finally {
-            try {
-                inputStream.close();
-                httpURLConnection.disconnect();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+        } catch (Exception e)
+        {
 
         }
+        return result;
     }
 //create_doctor Method
     public String create_doctor(String connecString,String param1,String param2,String param3,String param4,String param5,String param6,String param7,String param8)//change 1

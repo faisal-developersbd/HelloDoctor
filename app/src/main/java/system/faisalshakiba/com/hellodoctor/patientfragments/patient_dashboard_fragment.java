@@ -222,6 +222,24 @@ public class patient_dashboard_fragment extends Fragment {
                         cmdThread();
 
                     }
+                    else if (cmd.equals("exit app")||cmd.equals("exit application"))
+                    {
+
+//
+
+                        set_getWordString("sure, sir.");
+                       System.exit(0);
+
+                    }
+                    else if (cmd.equals("hi"))
+                    {
+
+//
+
+                        set_getWordString("hello");
+                        cmdThread();
+
+                    }
 
                     else
                     {

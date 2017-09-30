@@ -12,6 +12,7 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
     Context context;
     private String connectionString="";
     ApiCall apiCall;
+    String result;
 
     public String getConnectionString() {
         return connectionString;
@@ -28,77 +29,80 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
        // setConnectionString("http://192.168.0.106:8084/NabannaApiGenerator/calculation");
         if(type.equals("pat_login"))
         {
-            apiCall.login_patient(connectionString,params[1],params[2]);
+            result=apiCall.login_patient(connectionString,params[1],params[2]);
         }
         else if(type.equals("create_patient"))
         {
-            apiCall.create_patient(connectionString,params[1],params[2],params[3],params[4],params[5]);
+            result=apiCall.create_patient(connectionString,params[1],params[2],params[3],params[4],params[5]);
         }
         else if(type.equals("create_doctor"))
         {
-            apiCall.create_doctor(connectionString,params[1],params[2],params[3],params[4],params[5],params[6],params[7],params[8]);
+            result=apiCall.create_doctor(connectionString,params[1],params[2],params[3],params[4],params[5],params[6],params[7],params[8]);
         }
         else if(type.equals("create_time"))
         {
-            apiCall.create_time(connectionString,params[1],params[2],params[3],params[4]);
+            result=apiCall.create_time(connectionString,params[1],params[2],params[3],params[4]);
         }
         else if(type.equals("create_ambulance"))
         {
-            apiCall.create_ambulance(connectionString,params[1],params[2],params[3],params[4],params[5]);
+            result=apiCall.create_ambulance(connectionString,params[1],params[2],params[3],params[4],params[5]);
         }
         else if(type.equals("create_booking"))
         {
-            apiCall.create_booking(connectionString,params[1],params[2],params[3],params[4]);
+            result=apiCall.create_booking(connectionString,params[1],params[2],params[3],params[4]);
         }
         else if(type.equals("create_rehab"))
         {
-            apiCall.create_rehab(connectionString,params[1],params[2],params[3],params[4],params[5],params[6],params[7],params[8]);
+            result=apiCall.create_rehab(connectionString,params[1],params[2],params[3],params[4],params[5],params[6],params[7],params[8]);
         }
         else if(type.equals("create_specialist"))
         {
-            apiCall.create_specialist(connectionString,params[1],params[2],params[3]);
+            result= apiCall.create_specialist(connectionString,params[1],params[2],params[3]);
         }
         else if(type.equals("login_doctor"))
         {
-            apiCall.login_doctor(connectionString,params[1],params[2]);
+            result= apiCall.login_doctor(connectionString,params[1],params[2]);
         }
         else if(type.equals("list_ambulance"))
         {
-            apiCall.list_ambulance(connectionString);
+            result=apiCall.list_ambulance(connectionString);
         }
         else if(type.equals("list_booking"))
         {
-            apiCall.list_booking(connectionString,params[1]);
+            result=apiCall.list_booking(connectionString,params[1]);
         }
         else if(type.equals("list_rehab"))
         {
-            apiCall.list_rehab(connectionString);
+            result=apiCall.list_rehab(connectionString);
         }else if(type.equals("list_specialist"))
         {
-            apiCall.list_specialist(connectionString);
+            result=apiCall.list_specialist(connectionString);
         }
         else if(type.equals("list_time"))
         {
-            apiCall.list_time(connectionString);
+            result=apiCall.list_time(connectionString);
         }
         else if(type.equals("doctor_time"))
         {
-            apiCall.doctor_time(connectionString,params[1]);
+            result=apiCall.doctor_time(connectionString,params[1]);
         }
         else if(type.equals("booking_patient"))
         {
-            apiCall.booking_patient(connectionString,params[1]);
+            result=apiCall.booking_patient(connectionString,params[1]);
         }
         else if(type.equals("booking_doctor"))
         {
-            apiCall.booking_patient(connectionString,params[1]);
+            result=apiCall.booking_patient(connectionString,params[1]);
         }
 
 
 
         return null;
     }
-
+public String getResult()
+{
+    return  result;
+}
     @Override
     protected void onPreExecute() {
 

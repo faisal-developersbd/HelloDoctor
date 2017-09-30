@@ -1,6 +1,7 @@
 package system.faisalshakiba.com.hellodoctor.patientfragments.patient_dashboard;
 
 import android.app.Fragment;
+import android.app.FragmentManager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -28,6 +29,7 @@ import system.faisalshakiba.com.hellodoctor.VideoActivity;
 
 import system.faisalshakiba.com.hellodoctor.items.doctorlist;
 import system.faisalshakiba.com.hellodoctor.items.time;
+import system.faisalshakiba.com.hellodoctor.patientfragments.patient_dashboard_fragment;
 
 import static java.lang.Thread.sleep;
 
@@ -65,6 +67,15 @@ public class AppoinmentFragment extends Fragment {
         cancel=(Button)myview.findViewById(R.id.details_cancel);
         context=getActivity().getBaseContext();
         vf=new VoiceFeature(context);
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                FragmentManager fragmentManager=getFragmentManager();
+
+                fragmentManager.beginTransaction().replace(R.id.content_patient_nav,new patient_dashboard_fragment()).commit();
+            }
+        });
         ts=new TextToSpeech(context, new TextToSpeech.OnInitListener() {
             @Override
             public void onInit(int status) {

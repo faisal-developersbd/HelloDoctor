@@ -2,7 +2,6 @@ package system.faisalshakiba.com.hellodoctor.commonactivities;
 
 
 import android.app.FragmentManager;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -78,6 +77,7 @@ public class PatientNavActivity extends AppCompatActivity
         fragment_DoctorAppoinmentFragment=new DoctorAppoinmentFragment();
         fragmentManager.beginTransaction().replace(R.id.content_patient_nav,patientFragment).commit();
         trackFragment=1;
+
     }
 
     @Override
