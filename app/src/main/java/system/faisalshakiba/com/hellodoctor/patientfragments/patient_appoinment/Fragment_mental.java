@@ -24,6 +24,7 @@ import java.util.List;
 
 import system.faisalshakiba.com.hellodoctor.R;
 import system.faisalshakiba.com.hellodoctor.items.doctorlist;
+import system.faisalshakiba.com.hellodoctor.patientfragments.patient_dashboard.AppoinmentFragment;
 import system.faisalshakiba.com.hellodoctor.patientfragments.patient_dashboard_fragment;
 
 /**
@@ -37,6 +38,7 @@ public class Fragment_mental extends Fragment {
     Spinner spinner;
     doctorlist dlist;
     Button back;
+     List<doctorlist> arrayList;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, final ViewGroup container, Bundle savedInstanceState) {
@@ -58,7 +60,7 @@ public class Fragment_mental extends Fragment {
         items.add("Neurologist (2)");
         items.add("Pediatric Neurologist (3)");
 
-        final List<doctorlist> arrayList=new ArrayList<doctorlist>();
+        arrayList=new ArrayList<doctorlist>();
         dlist=new doctorlist();
         ArrayAdapter<String> myadapter=new ArrayAdapter<String>(context,android.R.layout.simple_list_item_1,items);
         myadapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -126,6 +128,20 @@ public class Fragment_mental extends Fragment {
         listView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
 
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                int item= (int) listView.getAdapter().getItem(position);
+
+                doctorlist dl=arrayList.get(item);
+
+                Mental_details_fragment mental_details_fragment=new Mental_details_fragment();
+                mental_details_fragment.setDlist(dl);
+                //Toast.makeText(context,""+dl.getDoctorName(),Toast.LENGTH_LONG).show();
+                FragmentManager fragmentManager=getFragmentManager();
+                fragmentManager.beginTransaction().replace(R.id.content_patient_nav,mental_details_fragment).commit();
+            }
+        });
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
