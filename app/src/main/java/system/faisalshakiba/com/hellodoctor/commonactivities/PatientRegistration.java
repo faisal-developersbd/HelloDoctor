@@ -62,7 +62,7 @@ public class PatientRegistration extends AppCompatActivity {
                 String docMobile=mobile.getText().toString();
                 String docEmail=email.getText().toString();
 
-                String url="http://192.168.0.108:8084/HelloDoctorApi/create_patient";
+                String url="http://hellodoctor.kilatiron.com/create_patient";
                 String method="create_patient";
                 BackgroundWorker worker=new BackgroundWorker(PatientRegistration.this,url);
                 worker.execute(method,docId,docName,docPassword,docMobile,docEmail);

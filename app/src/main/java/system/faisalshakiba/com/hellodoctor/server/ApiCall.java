@@ -126,6 +126,7 @@ public class ApiCall {
                 Log.d("serverexception","result: "+result);
                 inputStream.close();
                 httpURLConnection.disconnect();
+                Log.d("spring1","Response: "+sb.toString());
             } catch (IOException e) {
                 Log.d("serverexception","Error: "+e);
 
@@ -943,7 +944,7 @@ public class ApiCall {
     //booking_doctor 1 parameters
     public String booking_doctor(String connecString,String param1)//change 1
     {
-        try {
+
             URL url= null;
             try {
                 this.connecString=connecString;
@@ -972,8 +973,13 @@ public class ApiCall {
                 while ((line = bufferedReader.readLine()) != null) {
                     sb.append(line + "\n");
                     Log.d("serverexception","Response: "+sb.toString());
+                    Log.d("message","Message1: "+sb.toString());
                 }
+
                 bufferedReader.close();
+                inputStream.close();
+                httpURLConnection.disconnect();
+
 
                 this.result=sb.toString();
                 Log.d("serverexception","result: "+result);
@@ -983,15 +989,7 @@ public class ApiCall {
 
             }
             return result;
-        } finally {
-            try {
-                inputStream.close();
-                httpURLConnection.disconnect();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
 
-        }
     }
 
 

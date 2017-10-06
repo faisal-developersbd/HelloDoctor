@@ -13,15 +13,10 @@ import android.widget.Spinner;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
-import java.sql.Blob;
 import java.util.ArrayList;
 import java.util.List;
 
 import system.faisalshakiba.com.hellodoctor.R;
-import system.faisalshakiba.com.hellodoctor.apitest.DoctorActivity;
-import system.faisalshakiba.com.hellodoctor.items.doctor;
-import system.faisalshakiba.com.hellodoctor.items.doctorlist;
-import system.faisalshakiba.com.hellodoctor.server.ApiCall;
 import system.faisalshakiba.com.hellodoctor.server.BackgroundWorker;
 
 /**
@@ -105,7 +100,7 @@ public class DoctorRegistration extends AppCompatActivity {
 
 
 
-                String url="http://192.168.0.108:8084/HelloDoctorApi/create_doctor";
+                String url="http://hellodoctor.kilatiron.com/create_doctor";
                 String method="create_doctor";
                BackgroundWorker worker=new BackgroundWorker(DoctorRegistration.this,url);
             worker.execute(method,docId,docName,docPassword,docMobile,docEmail,docFees,"101","101");
